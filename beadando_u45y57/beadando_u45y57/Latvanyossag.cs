@@ -10,13 +10,12 @@ namespace beadando_u45y57
     {
         internal int ferohelyek;
         internal bool uzemel;
-        internal int ar;
+      private static int ar;
+        internal int bevetel;
 
-        private int Ar
-        {
-            get;
-        }
+       internal int Ar { get { return ar; } set { ar = value; } }
 
-        private int bevetel;
+      
+        
     }
 }

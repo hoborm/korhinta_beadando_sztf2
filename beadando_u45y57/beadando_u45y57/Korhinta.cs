@@ -9,20 +9,23 @@ namespace beadando_u45y57
     internal class Korhinta : Latvanyossag
     {
         private int maxmenet;
-        private Sor<Csoport> sor = new Sor<Csoport>();
+        internal Sor<Csoport> sor = new Sor<Csoport>();
 
         public Korhinta(int ferohelyek, int maxmenet, int ar)
         {
             uzemel = true;
             this.ferohelyek = ferohelyek;
             this.maxmenet = maxmenet;
-            this.ar = ar;
+            this.Ar = ar;
+            bevetel = 0;
         }
 
         public void Menet()
         {
+
             if (uzemel == true)
             {
+                Beszallas();
                 maxmenet--;
                 Console.WriteLine("");
                 if (maxmenet == 0)
@@ -35,5 +38,36 @@ namespace beadando_u45y57
                 Console.WriteLine("A mai napra a Korhinta mar nem uzemel!");
             }
         }
+
+        public void Sorbaallas(Sor<Csoport> sor)
+        {
+            this.sor = sor;
+        }
+
+        public void Sorbaallas(Csoport csoport)
+        {
+            this.sor.Add(csoport);
+        }
+
+        private void Beszallas()
+        {
+            int menetferohelyek = ferohelyek;
+            bool betelt = false;
+            int listahossz = sor.Length;
+            while (!betelt && listahossz != 0)
+            {
+                if (menetferohelyek >= sor.Peek().EmberekSzama)
+                {
+                    listahossz--;
+                    bevetel = bevetel + Ar * sor.Peek().EmberekSzama;
+                    sor.Pop();
+                }
+                else
+                {
+                    betelt = true;
+                }
+            }
+        }
+        
     }
 }

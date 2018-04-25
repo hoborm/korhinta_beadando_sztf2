@@ -33,6 +33,15 @@ namespace beadando_u45y57
             this.emberekszama = 0;
         }
 
-        //Meg fejleszthetjuk a csoportot, hogy emberek elhagyhassak illetve belephessenek a csoportba.
+
+        public void Felvetel(int ember)
+        {
+            this.emberekszama += ember;
+        }
+
+        public void Elhagyas(int ember)
+        {
+            this.emberekszama -= ember;
+        }
     }
 }
