@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beadando_u45y57", "beadando_u45y57\beadando_u45y57.csproj", "{9142AEBE-650C-4E65-80BF-75BF9C91DBF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9142AEBE-650C-4E65-80BF-75BF9C91DBF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9142AEBE-650C-4E65-80BF-75BF9C91DBF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9142AEBE-650C-4E65-80BF-75BF9C91DBF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9142AEBE-650C-4E65-80BF-75BF9C91DBF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
