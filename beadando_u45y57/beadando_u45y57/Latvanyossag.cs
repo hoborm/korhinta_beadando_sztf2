@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 namespace beadando_u45y57
 {
-    internal abstract class Latvanyossag
+    public abstract class Latvanyossag
     {
         internal int ferohelyek;
         internal bool uzemel;
-      private static int ar;
+        internal static int ar;
         internal int bevetel;
 
-       internal int Ar { get { return ar; } set { ar = value; } }
-
-      
-        
+        public int Ar { get { return ar; } set { ar = value; } }
+        public int Ferohelyek { get { return ferohelyek; } set { ferohelyek = value; } }
     }
 }

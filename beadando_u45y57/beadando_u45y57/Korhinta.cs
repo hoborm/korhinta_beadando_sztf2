@@ -6,12 +6,18 @@ using System.Threading.Tasks;
 
 namespace beadando_u45y57
 {
-    internal class Korhinta : Latvanyossag
+    public class Korhinta : Latvanyossag
     {
-        private int maxmenet;
+        internal int maxmenet;
         internal Sor<Csoport> sor = new Sor<Csoport>();
 
-        public Korhinta(int ferohelyek, int maxmenet, int ar)
+        public int Maxmenet
+        {
+            get { return maxmenet; }
+            set { maxmenet = value; }
+        }
+
+        public Korhinta(int ferohelyek, int maxmenet, int ar) //ferohelyek, max menet es arat is be tudjuk allitani, bevetel uj korhintanal 0
         {
             uzemel = true;
             this.ferohelyek = ferohelyek;
@@ -20,15 +26,20 @@ namespace beadando_u45y57
             bevetel = 0;
         }
 
-        public void Menet()
+        public Korhinta()
         {
+            uzemel = true;
+            bevetel = 0;
+        }
 
+        public void Menet()  //indul a menet!!!!!!
+        {
             if (uzemel == true)
             {
                 Beszallas();
                 maxmenet--;
                 Console.WriteLine("");
-                if (maxmenet == 0)
+                if (maxmenet == 0) //itt allitom meg, ha a napi menetek szama mar elerte a maxot, a kovetkezo menetben mar nem tudnak menni az emberek.
                 {
                     uzemel = false;
                 }
@@ -39,7 +50,7 @@ namespace beadando_u45y57
             }
         }
 
-        public void Sorbaallas(Sor<Csoport> sor,bool felulir)
+        internal void Sorbaallas(Sor<Csoport> sor, bool felulir) //hozzaadja vagy felulirja az adott sort
         {
             if (felulir)
             {
@@ -52,22 +63,19 @@ namespace beadando_u45y57
                     this.sor.Add(item);
                 }
             }
-           
         }
-       
 
-
-        public void Sorbaallas(Csoport csoport)
+        internal void Sorbaallas(Csoport csoport) //hozzaadja az adott csoportot a sorhoz
         {
             this.sor.Add(csoport);
         }
 
-        private void Beszallas()
+        private void Beszallas() //ezzel pakoljuk fel a latogatokat a korhintara
         {
             int menetferohelyek = ferohelyek;
             bool betelt = false;
             int listahossz = sor.Length;
-            while (!betelt && listahossz != 0)
+            while (!betelt&& listahossz != 0) //itt nezem, hogy ne szalljanak fel 2x ugyanazok az emberek egy menetre illetve azt, hogy megtelt-e a menet
             {
                 if (menetferohelyek >= sor.Peek().EmberekSzama)
                 {
@@ -81,6 +89,5 @@ namespace beadando_u45y57
                 }
             }
         }
-        
     }
 }

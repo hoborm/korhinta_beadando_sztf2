@@ -6,32 +6,24 @@ using System.Threading.Tasks;
 
 namespace beadando_u45y57
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-
             Sor<Csoport> sor = new Sor<Csoport>();
-            sor.Add(new Csoport(2));
-            sor.Add(new Csoport(3));
-            sor.Add(new Csoport(1));
-            sor.Add(new Csoport(4));
-            sor.Add(new Csoport(1));
-            sor.Add(new Csoport(5));
-            sor.Add(new Csoport(2));
-            
+            Korhinta korhinta = new Korhinta();
 
-            Korhinta korhinta = new Korhinta(10,5,1);
-
-            korhinta.Sorbaallas(sor,true);
-
-            for (int i = 0; i < 9; i++)
+            FileHandler.Instance.InitializeFileHandler(ref korhinta, ref sor);
+            FileHandler.Instance.FilebolBeolvasas("korhinta.txt");
+            korhinta.Sorbaallas(sor, true); //sorbaallitjuk a nepet
+            for (int i = 0; i < korhinta.maxmenet; i++) //menetek szamaszor fut le a korhinta
             {
                 korhinta.Menet();
             }
 
-            Console.ReadKey();
+            FileHandler.Instance.FilebaKiiras("game_out.txt");
 
+            Console.ReadKey();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace beadando_u45y57
 {
-    internal class Csoport : ICsoportTagokSzama
+    public class Csoport : ICsoportTagokSzama
     {
         private int emberekszama;
 
@@ -28,18 +28,17 @@ namespace beadando_u45y57
             emberekszama = 0;
         }
 
-        public void Feloszlik()
+        public void Feloszlik() //fel tudjuk oszlatni a csoportot=0 tagu
         {
             this.emberekszama = 0;
         }
 
-
-        public void Felvetel(int ember)
+        public void Felvetel(int emberek) //hozza tudunk adni embereket a csoporthoz
         {
-            this.emberekszama += ember;
+            this.emberekszama += emberek;
         }
 
-        public void Elhagyas(int ember)
+        public void Elhagyas(int ember) //x db ember el is tudja hagyni a csoportot
         {
             this.emberekszama -= ember;
         }
