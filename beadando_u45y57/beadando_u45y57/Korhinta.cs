@@ -39,10 +39,23 @@ namespace beadando_u45y57
             }
         }
 
-        public void Sorbaallas(Sor<Csoport> sor)
+        public void Sorbaallas(Sor<Csoport> sor,bool felulir)
         {
-            this.sor = sor;
+            if (felulir)
+            {
+                this.sor = sor;
+            }
+            else
+            {
+                foreach (Csoport item in sor)
+                {
+                    this.sor.Add(item);
+                }
+            }
+           
         }
+       
+
 
         public void Sorbaallas(Csoport csoport)
         {
